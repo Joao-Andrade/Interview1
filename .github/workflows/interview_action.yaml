@@ -1,0 +1,13 @@
+name: interview1-actions
+run-name: ${{ github.actor }} is doing interview 1 GitHub Actions
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  EchoChamberHelm:
+    runs-on: [self-hosted]
+    steps:
+      - uses: actions/checkout@v3
+      - run: helm version
+      - run: minikube kubectl version --short
